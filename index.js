@@ -7,6 +7,8 @@ let counter = {
 
 
 // Even or Odd------------------------------------------------
+//--This function is O(1)
+//--The value can be 1B or 1 and it performs 1 operation
 function isEven(value){
   if (value % 2 === 0){
     return true;
