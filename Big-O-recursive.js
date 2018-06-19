@@ -1,5 +1,6 @@
 'use strict';
 
+// O(1) vs. O(log n) vs. O(n) vs. O(n log(n)) vs. O(n^2) vs. O(2^n) vs. O(n!)
 
 function countSheep(num){
   //stopping condition of base case

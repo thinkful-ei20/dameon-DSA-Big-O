@@ -1,5 +1,8 @@
 'use strict';
 
+
+// O(1) vs. O(log n) vs. O(n) vs. O(n log(n)) vs. O(n^2) vs. O(2^n) vs. O(n!)
+
 //Exercise 1 - Counting Sheep
 /*
  * @function countSheepLoop
@@ -11,7 +14,7 @@
 
 function countSheepLoop(num){
   for(let i=num; i>0; i--){
-      console.log(`counting sheeps ${i}`);
+    console.log(`counting sheeps ${i}`);
   }
 }
 countSheepLoop(10);
@@ -27,7 +30,7 @@ countSheepLoop(10);
 function double_all(arr) {
   var ret = Array(arr.length);
   for (var i = 0; i < arr.length; ++i) {
-      ret[i] = arr[i] * 2;
+    ret[i] = arr[i] * 2;
   }
   return ret;
 }
@@ -39,8 +42,8 @@ console.log(double_all(arr));
 //string.
 //Direct transformation of the tail-recursive form.
 function reverse_tail(str) {
-  var accumulator = "";
-  while (str !== "") {
+  var accumulator = '';
+  while (str !== '') {
     accumulator = str[0] + accumulator;
     str = str.slice(1);
   }
@@ -65,10 +68,10 @@ function triangle(n) {
 function split(str, sep) {
   var ret = [];
   while (true) {
-      var idx = str.indexOf(sep);
-      if (idx == -1) break;
-ret.push(str.slice(0, idx))
-str = str.slice(idx + sep.length);
+    var idx = str.indexOf(sep);
+    if (idx == -1) break;
+    ret.push(str.slice(0, idx));
+    str = str.slice(idx + sep.length);
   }
   ret.push(str);
   return ret;
@@ -83,9 +86,9 @@ and print 11001 as an output. Note that the binary representation of 0 should be
 function convertToBinaryIter(num){
   var binary = '';
   while(num>0){
-      let rem = Math.floor(num%2);
-      binary = rem + binary;
-      num = Math.floor(num/2);
+    let rem = Math.floor(num%2);
+    binary = rem + binary;
+    num = Math.floor(num/2);
   }
   return binary;
 
@@ -100,11 +103,11 @@ The factorial of a number can be found by multiplying that number by each number
 between itself and one. The factorial of 5 is equal to 5 * 4 * 3 * 2 * 1 = 120
 */
 function factorialIterative(number){
- let fact = 1;
- for (let i = 1; i <= number; i++){
-     fact *= i;
- }
- return fact;
+  let fact = 1;
+  for (let i = 1; i <= number; i++){
+    fact *= i;
+  }
+  return fact;
 }
 console.log(factorialIterative(5));
 
@@ -120,10 +123,10 @@ function fibonacciIterative(number){
   let num2 = 0;
   let fib = null;
   while(number > 0){
-      fib = num1;
-      num1 = num1+num2;
-      num2 = fib;
-      number--;
+    fib = num1;
+    num1 = num1+num2;
+    num2 = fib;
+    number--;
   }
   return num2;
 
@@ -136,7 +139,7 @@ function fibonacciIterative(number){
 function fibonacciIterative2(number){
   let [num1, num2] = [1,0];
   while(number-- > 0){
-      [num1, num2] = [num2+num1, num1]
+    [num1, num2] = [num2+num1, num1];
   }
   return num2;
 
