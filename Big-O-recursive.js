@@ -2,6 +2,7 @@
 
 // O(1) vs. O(log n) vs. O(n) vs. O(n log(n)) vs. O(n^2) vs. O(2^n) vs. O(n!)
 
+//--answer--( O(n) )--performs a 1 function to 1 element operation
 function countSheep(num){
   //stopping condition of base case
   if(num === 0){
@@ -15,6 +16,7 @@ function countSheep(num){
   }
 }
 
+//--answer--( O(n) )--performs a 1 function to 1 element operation
 function double_all(arr) {
   if (!arr.length) {
     return [];
@@ -22,7 +24,7 @@ function double_all(arr) {
   return [arr[0] * 2, ...double_all(arr.slice(1))];
 }
 
-
+//--answer--( O(n) )--performs a 1 function to 1 element operation
 function reverseString(str) {
   if (str.length < 2) {
     return str;
@@ -30,15 +32,17 @@ function reverseString(str) {
   return reverseString(str.slice(1)) + str[0];
 }
 
+//--answer--( O(n) )--performs a 1 function to 1 element operation
 function triangle(n) {
   if (n < 2) 
     return n;
   return n + triangle(n - 1);
 }
 
+//--answer--( O(n) )--performs a 1 function to 1 element operation
 function split(str, sep) {
   var idx = str.indexOf(sep);
-  if (idx == -1) 
+  if (idx === -1) 
     return [str];
   //you don't have to return an array, you can return a string as an array of 
   //character 
@@ -49,6 +53,7 @@ function split(str, sep) {
 //return str.slice(0,idx).concat(split(str.slice(idx + sep.length), sep))
 }
 
+//--answer--( O(log n) )--performs a 1 function and divides in half, the remaing elements
 function convertToBinary(num){
   if(num>0){
     let binary = Math.floor(num%2); //save the reminder in binary
@@ -60,6 +65,7 @@ function convertToBinary(num){
   }
 }
 
+//--answer--( O(n) )--performs a 1 function to 1 element operation 
 function factorial(n) {  
   // Base Case - when n is equal to 0, we stop the recursion
   if (n === 0) {
@@ -69,7 +75,7 @@ function factorial(n) {
   // It will run for all other conditions except when n is equal to 0
   return n * factorial(n - 1);
 }
-
+//--answer--( O(n) )--performs a 1 function to 1 element operation
 function fibonacci(n) {
   // Base case
   if (n <= 0) {
@@ -79,10 +85,10 @@ function fibonacci(n) {
   if (n <= 2) {
     return 1;
   }	
-  // Recursive case
+  // Recursive case n
   return fibonacci(n - 1) + fibonacci(n - 2);	
 }
-
+//--answer--( O(n!) )--performs (factorial) functions for every 1 element 
 function anagrams(prefix, str){
   if(str.length <= 1){
     console.log(`The anagram is ${prefix}${str}`);
@@ -96,12 +102,16 @@ function anagrams(prefix, str){
   }
 }
 
+//example   (3 = 6) ,(4 = 24), (5 = 120 ), (6 = 720)...
+
 
 function printAnagram(word){
   //console.log(`The word for which we will find an anagram is ${word}`);
   anagrams(' ', word);
 
 }
+
+
 
 const animalHierarchy = [
   {id: 'Animals', parent: null},
@@ -114,12 +124,17 @@ const animalHierarchy = [
 ];
 
 // ==============================
+//--answer--( O(n^2) )--It goes over the array multiple times
+
 function traverse(animalHierarchy, parent) {
   let node = {};
   animalHierarchy.filter(item => item.parent === parent)
     .forEach(item => node[item.id] = traverse(animalHierarchy, item.id));
   return node;  
 }
+
+// example ( 5 = 25 ) ( 6 = 36 )
+
 
 let organization = {
   'Zuckerberg': {		
@@ -184,7 +199,7 @@ let organization = {
         'Wes':{}
       }
     }}};
-
+//--answer--( O(n^2) )--It goes over the array multiple times for multiple parts of the array
 function traverseA(data, depth = 0) {
   let indent = ' '.repeat(depth * 4);
   Object.keys(data).forEach(key => {

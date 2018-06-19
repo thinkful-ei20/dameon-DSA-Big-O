@@ -141,7 +141,7 @@ function findRandomElement(arr) {
 }
 
 // Is it prime?--------------------------------------------------
-//--This functin is O(n)
+//--This function is O(n)
 //--It performs a check on all numbers up to number to see if it's prime
 //--Example (23 gets 23 operations) (41 gets 41 operations)
 function isPrime(n) {
